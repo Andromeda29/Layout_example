@@ -1,0 +1,66 @@
+@mixin font-face($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+@import "normalize";
+@import "fonts";
+
+body{
+  &.lock{
+    overflow: hidden; 
+  }
+}
+.ibg{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.ibg img{
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    visibility: hidden;
+}
+.header {
+  // position: absolute;
+  // width: 100%;
+  // height: 100%;
+  // left: 0px;
+  // top: 0px;
+
+  
+// .header__fullscreen
+  &__fullscreen {
+    -webkit-box-flex:1;
+    -ms-flex:1 0 100%;
+    flex:1 0 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index:-1;
+  }
+}
+.wrap {
+  max-width: 1160px;
+  width: 100%;
+  padding: 0px 15px;
+  margin: 0px auto;
+}
+
+@import "header-menu";
+@import "main-content";
+@import "testimonials";
+  
+
+
