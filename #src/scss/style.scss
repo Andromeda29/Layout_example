@@ -10,57 +10,189 @@
 @import "normalize";
 @import "fonts";
 
+
 body{
-  &.lock{
-    overflow: hidden; 
-  }
+  min-width: 375px;
+  overflow-x: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.ibg{
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-}
-.ibg img{
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    opacity: 0;
-    visibility: hidden;
-}
-.header {
-  // position: absolute;
-  // width: 100%;
-  // height: 100%;
-  // left: 0px;
-  // top: 0px;
-
-  
-// .header__fullscreen
-  &__fullscreen {
-    -webkit-box-flex:1;
-    -ms-flex:1 0 100%;
-    flex:1 0 100%;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
-    z-index:-1;
-  }
-}
-.wrap {
-  max-width: 1160px;
+img{
   width: 100%;
-  padding: 0px 15px;
-  margin: 0px auto;
+  height: 100%;
+  -o-object-fit:contain;
+     object-fit:contain;
+}
+.app{
+  margin: 0 auto;
+  max-width: 375px;
+}
+.header{
+  padding: 30px 0 38px;
+  &__logo{
+    width: 230px;
+    height: 60px;
+    margin: 0 auto;
+  }
+}
+.rate{
+  &__wrap{
+    padding: 0 18px;
+    @media(max-width:375px){  
+    }
+  }
+  &__container{
+    width: 340px;
+    background: #FFFFFF;
+    -webkit-box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    padding: 15px 0 22px;
+    text-align: center;
+  }
+  &__circle{
+      width: 230px;
+      height:230px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border: 20px solid #339933;
+      position: relative;
+      margin: 0 auto;
+      display: none;
+    }
+  &__progres{
+    width: 230px;
+    height:230px;
+    border-radius: 50%;
+  }
+  &__percent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    color: #339933;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+  &__title{
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 26px;  
+  }
+  &__text{
+    font-family: Verdana;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0em;
+  }
+  &__desc{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 22px 0;
+  }
+  &__btn{
+    margin: 0px auto 22px;
+    text-align: center;
+    button{
+      width: 310px;
+      height: 57px;
+      background: #339933;
+      border-radius: 15px;
+      font-family: Arial;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 25px;
+      text-align: center;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+    }
+  }
+}
+.footer{
+  &__agreement{
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 9px;
+    text-align: justify;
+    letter-spacing: -0.03em;
+    color: rgba(0, 0, 0, 0.3);
+    padding: 0 17px;
+  }
+}
+.progres{
+  position: relative;
+  margin: 0 auto;
+  &__left{
+    position: absolute;
+    top:0;
+    left: 0;
+    -webkit-animation: spin 5s linear 0s infinite;
+            animation: spin 5s linear 0s infinite;
+  }
+  &__right{
+    position: absolute;
+    top:0;
+    left: 0;
+    animation: spin2 3s linear 0s infinite;
+    -webkit-animation: spin2 3s linear 0s infinite;
+}
+}
+@-webkit-keyframes spin {
+  from {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+}
+@keyframes spin {
+  from{-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
 }
 
-@import "header-menu";
-@import "main-content";
-@import "testimonials";
-  
+@-webkit-keyframes spin2 {
+  from {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+  to  {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+}
 
+@keyframes spin2 {
+  from {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+  to  {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+}
 
+#page-preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 100500;
+}
+
+#page-preloader .spinner {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: url('/images/spinner.gif') no-repeat 50% 50%;
+  margin: -16px 0 0 -16px;
+}

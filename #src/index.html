@@ -8,20 +8,50 @@
   <title>Test</title>
 </head>
 <body>
+  <div id="page-preloader"><span class="spinner"></span></div>
+  <div class="app">
+  <header class="header">
+      <div class="header__logo">
+         <img src="img/g10.png" alt="logo">
+      </div>
+  </header>
+  <main>
+    <div class="rate">
+      <div class="rate__wrap">
+        <div class="rate__container">
+          <div class="rate__progres progres">
+            <img class="progres__left" src="img/progress1.png" alt="">
+            <img class="progres__right" src="img/progress2.png" alt="">
+          </div>
+          <div class="rate__circle">
+              <p class="rate__percent">100%</p>
+          </div>
+          <div class="rate__content">
+            <div class="rate__title">Your IQ Test report is ready</div>
+            <div class="rate__text">According to the replies, you belong to the category with a rare type of intelligence. Only 13% of the respondents have this way of thinking.</div>
+          </div>
+        </div>
+        <div class="rate__desc">Click the button to access your full report</div>
+        <div class="rate__btn">
+          <button>CONTINUE</button>
+        </div>
+        </div>
+      </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrap">
+      <p class="footer__agreement">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi incidunt ut, excepturi distinctio fuga aperiam a. Qui, esse nam accusantium ipsum non alias inventore sunt perferendis facere quisquam sit animi ut hic repudiandae debitis eligendi doloribus totam harum, sapiente ipsa, ratione nostrum explicabo, aspernatur. Dolores minima harum necessitatibus soluta cumque voluptatem eum atque voluptatibus omnis vitae dolore accusamus illum ab, aliquam esse laborum magni dicta, molestiae? Ipsum, nesciunt, adipisci libero officiis quis perspiciatis molestiae temporibus. Quibusdam magni architecto, ab dolorum quasi tempore natus, tenetur, asperiores a rerum nulla facilis, beatae repellendus similique nobis in sequi odit. Architecto perspiciatis quasi quos.   
+      </p>
+    </div>
+  </footer>
+</div>
 
-  <div class="wrapper header">
-    <div class="header__fullscreen ibg">
-      <img src="img/pic-fon.jpg" alt="">
-   </div>
-    @@include('_header-menu.html')
-    <main class="main__wrap">
-    @@include('_main-content.html')
-    @@include('_testimonials.html')    
-    </main>
-  </div>
+    <!-- @@include('_header-menu.html') -->
+    
+
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
   <script src="js/script.min.js"></script>
 </body>
 </html>
